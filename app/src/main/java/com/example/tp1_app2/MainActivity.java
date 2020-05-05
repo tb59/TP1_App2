@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +57,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Cette méthode n'est plus appelée lorsque l'on clique sur le bouton
         // Car une autre méthode a été déclarée de manière programmatique
         alerter("Click sur OK");
+    }
+
+    /* Gestion des menus */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.menu_compte :
+                alerter("click sur compte");
+                break;
+            case R.id.menu_prefs :
+                alerter("click sur prefs");
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

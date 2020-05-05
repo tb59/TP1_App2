@@ -3,4 +3,6 @@
     <string name="labelBtnOK">OK</string>
     <string name="labelNom">Nom :</string>
     <string name="name">Name</string>
+    <string name="compte">Compte</string>
+    <string name="preferences">Préférences</string>
 </resources>
