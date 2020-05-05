@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    android:background="@color/orange"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:height="70dp"
-        android:background="#000000"
+        android:background="@color/black"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/app_name"
         android:textColor="#FFFFFF"
@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:onClick="foo"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/name"
