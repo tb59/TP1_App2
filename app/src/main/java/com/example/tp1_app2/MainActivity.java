@@ -2,6 +2,7 @@ package com.example.tp1_app2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -40,8 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         // appelée lors du click sur btnOk, OU edtPseudo
         String s = refEdtPseudo.getText().toString();
+        Bundle b = new Bundle();
+        b.putString("pseudo",s);
+
         switch(v.getId()) {
-            case R.id.btnOK : alerter("Pseudo = " + s);break;
+            case R.id.btnOK :
+                alerter("Pseudo(bundle) = " + b.getString("pseudo"));
+                Intent versSecondAct = new Intent(this,SecondActivity.class);
+                versSecondAct.putExtras(b);
+                startActivity(versSecondAct);
+                break;
             case R.id.edtPseudo : alerter("click sur edtPseudo");break;
 
         }
