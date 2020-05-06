@@ -3,7 +3,9 @@ package com.example.tp1_app2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button refBtnOK;
     private EditText refEdtPseudo;
+    private SharedPreferences prefs;
 
     private final String TAG = "PMR";
     @Override
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         refBtnOK = findViewById(R.id.btnOK);
         refEdtPseudo = findViewById(R.id.edtPseudo);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 /*        refBtnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +42,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Lire la valeur du pseudo dans les préférences de l'activité
+
+        String pseudoPrefs = prefs.getString("pseudo","Toto");
+        alerter(pseudoPrefs);
+        // Ecrire cette valeur dans le champ pseudo
+        refEdtPseudo.setText(pseudoPrefs);
+    }
+
+    @Override
     public void onClick(View v) {
         // appelée lors du click sur btnOk, OU edtPseudo
         String s = refEdtPseudo.getText().toString();
@@ -46,6 +62,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch(v.getId()) {
             case R.id.btnOK :
+
+                // enregistrer dans les préférences la valeur actuelle du pseudo
+
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                editor.putString("pseudo",s);
+                editor.commit();
+
+
                 alerter("Pseudo(bundle) = " + b.getString("pseudo"));
                 Intent versSecondAct = new Intent(this,SecondActivity.class);
                 versSecondAct.putExtras(b);
@@ -85,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.menu_prefs :
                 alerter("click sur prefs");
+                Intent afficherPrefs = new Intent(this,PrefsActivity.class);
+                startActivity(afficherPrefs);
                 break;
 
         }

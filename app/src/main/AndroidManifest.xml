@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/logo_tp1_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".PrefsActivity"></activity>
         <activity android:name=".SecondActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
