@@ -8,4 +8,5 @@
     <string name="json">JSON</string>
     <string name="reseau">Réseau</string>
     <string name="envoyer_requete">Envoyer Requête</string>
+    <string name="recup_conversations">Récup conversations</string>
 </resources>
