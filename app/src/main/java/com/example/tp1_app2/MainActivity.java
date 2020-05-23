@@ -114,6 +114,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(afficherPrefs);
                 break;
 
+            case R.id.menu_json:
+                alerter("click sur json");
+                Intent afficherJson = new Intent(this,JsonActivity.class);
+                startActivity(afficherJson);
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

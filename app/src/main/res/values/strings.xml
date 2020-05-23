@@ -5,4 +5,5 @@
     <string name="name">Name</string>
     <string name="compte">Compte</string>
     <string name="preferences">Préférences</string>
+    <string name="json">JSON</string>
 </resources>
