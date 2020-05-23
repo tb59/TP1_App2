@@ -120,6 +120,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(afficherJson);
                 break;
 
+            case R.id.menu_reseau:
+                alerter("click sur reseau");
+                Intent afficherReseau = new Intent(this,NetworkActivity.class);
+                startActivity(afficherReseau);
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

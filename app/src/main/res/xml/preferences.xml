@@ -6,4 +6,10 @@
         android:singleLine="true"
         android:title="Pseudo"
         android:defaultValue="Toto"/>
+    <EditTextPreference
+        android:key="urlData"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="URL"
+        android:defaultValue="http://10.0.2.2/android_chat/data.php"/>
 </PreferenceScreen>

@@ -6,4 +6,6 @@
     <string name="compte">Compte</string>
     <string name="preferences">Préférences</string>
     <string name="json">JSON</string>
+    <string name="reseau">Réseau</string>
+    <string name="envoyer_requete">Envoyer Requête</string>
 </resources>
